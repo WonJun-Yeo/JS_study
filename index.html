@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h4 id="text">안녕하세요</h4>
+    <div class="alert-box" id="alert"></div>
+    <button onclick="안내창('아이디를 입력하세요', 'block')">버튼1</button>
+    <button onclick="안내창('비밀번호를 입력하세요', 'blcok')">버튼2</button>
+    <button id="close">닫기</button>
+
+    <script>
+      function 안내창(parameter1, parameter2) {
+        document.getElementById("alert").innerHTML = parameter1;
+        document.getElementById("alert").style.display = parameter2;
+      }
+
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      });
+
+      $("#text").addClass("yellow-box");
+    </script>
+  </body>
+</html>
