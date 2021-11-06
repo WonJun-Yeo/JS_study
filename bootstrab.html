@@ -30,7 +30,14 @@
         />
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" />
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          id="password"
+        />
+        <p id="email-alert">이메일란이 빈칸입니다.</p>
+        <p id="password-alert">패스워드란이 빈칸입니다.</p>
       </div>
       <button type="submit" class="btn btn-primary">전송</button>
     </form>
@@ -40,13 +47,41 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $("#email").on("submit", function () {
-        if ($("#email").val("") == "") {
-          $("#email").on("submit", function (e) {
-            e.preventDefault();
-          });
+      $("#email").on("submit", function (e) {
+        if ($("#email").val() == "") {
+          e.preventDefault();
+          $("email-alert").show();
+        }
+
+        if ($("#password").val() == "") {
+          e.preventDefault();
+          $("#password-alert").show();
         }
       });
+
+      var 이름 = "여원준";
+      var 나이 = "29";
+
+      var 예금액 = 60000;
+      var 미래예금액 = 0;
+
+      if (예금액 < 50000) {
+        미래예금액 = 예금액 * 1.15 * 1.15;
+      } else {
+        미래예금액 = 예금액 * 1.2 * 1.2;
+      }
+      console.log(미래예금액);
+
+      var 첫커피양 = 360;
+      var 첫리필양 = 0;
+      var 두번째리필양 = 0;
+      var 마신커피 = 0;
+
+      첫리필양 = (첫커피양 * 2) / 3;
+      두번째리필양 = (첫리필양 * 2) / 3;
+      마신커피 = 첫커피양 + 첫리필양 + 두번째리필양;
+
+      console.log(마신커피);
     </script>
   </body>
 </html>
