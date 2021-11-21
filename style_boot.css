@@ -107,3 +107,9 @@ ul.list::after {
 .tab-content.show {
   display: block;
 }
+
+/* interactive form */
+
+.size-select {
+  display: block;
+}
